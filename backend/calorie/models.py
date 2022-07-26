@@ -1,3 +1,4 @@
+from typing import List
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
@@ -7,3 +8,5 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
 
     USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS: List['name']
+
