@@ -137,12 +137,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
-<<<<<<< HEAD
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
     ],
-=======
->>>>>>> e2f389a47daa93f9651275977d3c435e4e43a23a
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
 
@@ -157,7 +154,6 @@ DJOSER = {
     'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE': True,
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
-<<<<<<< HEAD
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
     'SEND_CHANGED_EMAIL_CONFIRMATION': True,
     'SET_USERNAME_RETYPE': True,
@@ -171,15 +167,6 @@ DJOSER = {
         'user': 'calorie.serializers.UserCreateSerializer',
         'user_delete': 'djoser.serializers.UserCreateSerializer',
     }
-=======
-    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True, 
-    'SEND_CHANGED_EMAIL_CONFIRMATION': True, 
-    'SET_USERNAME_RETYPE': True,
-    'SET_PASSWORD_RETYPE': True,
-    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',  
-    'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}', 
-    'ACTIVATION_URL': 'activate/{uid}/{token}'
->>>>>>> e2f389a47daa93f9651275977d3c435e4e43a23a
 
 }
 # Default primary key field type
@@ -187,8 +174,4 @@ DJOSER = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 AUTH_USER_MODEL = 'calorie.UserAccount'
-=======
-AUTH_USER_MODEL = 'accounts.UserAccount'
->>>>>>> e2f389a47daa93f9651275977d3c435e4e43a23a
