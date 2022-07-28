@@ -15,14 +15,14 @@ const App = () => (
 		<Layout>
 			<Routes>
 				<Route path='/' element={<Home/>} />
-				<Route path='/login' component={Login} />
-				<Route path='/signup' component={Signup} />
-				<Route path='/reset_password' component={ResetPassword} />
+				<Route path='/login' element={<Login/>} />
+				<Route path='/signup' element={<Signup/>} />
+				<Route path='/reset-password' element={<ResetPassword/>} />
 				<Route
 					path='/password/reset/confirm/:uid/:token'
-					component={ResetPasswordConfirm}
+					element={<ResetPasswordConfirm/>}
 				/>
-				<Route path='/activate/:uid/:token' component={Activate} />
+				<Route path='/activate/:uid/:token' element={<Activate/>} />
 			</Routes>
 		</Layout>
 	</Router>
