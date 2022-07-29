@@ -1,8 +1,8 @@
 import {
 	LOGIN_SUCCESS,
 	LOGIN_FAIL,
-	LOAD_USER_SUCCESS,
-	LOAD_USER_FAIL,
+	USER_LOADED_SUCCESS,
+	USER_LOADED_FAIL,
 } from "../actions/reducers/types"
 
 const initialState = {
@@ -24,6 +24,16 @@ export default function (state = initialState, action) {
 				access: payload.access,
 				refresh: payload.refresh,
 			}
+        case USER_LOADED_SUCCESS:
+            return {
+                ...state,
+                user: payload
+            }
+        case USER_LOADED_FAIL:
+            return {
+                ...state,
+                user: null
+            }
 		case LOGIN_FAIL:
 			localStorage.removeItem("access")
 			localStorage.removeItem("refresh")
