@@ -36,7 +36,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
 	return (
 		<Fragment>
 			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
-				<Link className='navbar-brand' to='/'>
+				<Link className='navbar-brand mx-5' to='/'>
 					Calorie Tracker
 				</Link>
 				<button
