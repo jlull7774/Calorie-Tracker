@@ -59,7 +59,7 @@ const Signup = ({ signup, isAuthenticated }) => {
             <h1>Sign Up</h1>
             <p>Create your Account</p>
             <form onSubmit={e => onSubmit(e)}>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input
                         className='form-control'
                         type='text'
@@ -70,7 +70,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                         required
                     />
                 </div>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input
                         className='form-control'
                         type='text'
@@ -81,7 +81,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                         required
                     />
                 </div>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input
                         className='form-control'
                         type='email'
@@ -92,7 +92,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                         required
                     />
                 </div>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input
                         className='form-control'
                         type='password'
@@ -104,7 +104,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                         required
                     />
                 </div>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input
                         className='form-control'
                         type='password'
