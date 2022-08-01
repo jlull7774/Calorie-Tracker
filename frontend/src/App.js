@@ -1,31 +1,51 @@
-import "./App.css"
-import {
-	BrowserRouter,
-	BrowserRouter as Router,
-	Route,
-	Routes,
-} from "react-router-dom"
-import PrivateRoute from "./util/PrivateRoute"
-import { AuthProvider } from "./context/AuthContext"
+import React from "react"
+import { connect } from "react-redux"
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Provider as AlertProvider } from "react-alert"
+import AlertTemplate from "react-alert-template-basic"
+import Alerts from "./Alerts.js"
+import Register from "./components/accounts/Register"
+import Login from "./components/accounts/Login"
+import { loadUser } from "./actions/auth"
+import { BrowserRouter, Route } from "react-router-dom"
+import Home from "./components/home/Home"
+import NavBar from "./components/NavBar"
+import { Routes } from "react-router-dom"
 
-import HomePage from "./pages/HomePage"
-import LoginPage from "./pages/LoginPage"
-import Header from "./componenets/Navbar/Header"
-
-function App() {
-	return (
-		<div className='App'>
-			<BrowserRouter>
-				<AuthProvider>
-					<Header />
-					<Routes>
-						<Route path='/' element={<HomePage />} />
-						<Route path='/login' element={<LoginPage />} />
-					</Routes>
-				</AuthProvider>
-			</BrowserRouter>
-		</div>
-	)
+// Alert options
+const alertOptions = {
+	timeout: 3000,
+	position: "top center",
 }
 
-export default App
+class App extends React.Component {
+	componentDidMount() {
+		this.props.loadUser()
+	}
+
+	render() {
+		return (
+			<BrowserRouter>
+				<AlertProvider template={AlertTemplate} {...alertOptions}>
+					<NavBar />
+					<Alerts />
+					<Routes>
+						<Route exact path='/' element={<Home />} />
+						<Route path='/register' element={<Register />} />
+						<Route path='/login' element={<Login />} />
+					</Routes>
+				</AlertProvider>
+			</BrowserRouter>
+		)
+	}
+}
+
+const mapStateToProps = (state) => {
+	return {
+		auth: state.auth,
+	}
+}
+
+export default connect(mapStateToProps, {
+	loadUser,
+})(App)
