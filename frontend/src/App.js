@@ -1,38 +1,31 @@
-import React from "react"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import "./App.css"
+import {
+	BrowserRouter,
+	BrowserRouter as Router,
+	Route,
+	Routes,
+} from "react-router-dom"
+import PrivateRoute from "./util/PrivateRoute"
+import { AuthProvider } from "./context/AuthContext"
 
-import Home from "./containers/Home"
-import Login from "./containers/Login"
-import Signup from "./containers/Signup"
-import Activate from "./containers/Activate"
-import ResetPassword from "./containers/ResetPassword"
-import ResetPasswordConfirm from "./containers/ResetPasswordConfirm"
-import Facebook from './containers/Facebook';
-import Google from './containers/Google';
+import HomePage from "./pages/HomePage"
+import LoginPage from "./pages/LoginPage"
+import Header from "./componenets/Navbar/Header"
 
-import { Provider } from "react-redux"
-import store from "./store"
-
-import Layout from "./hoc/Layout"
-
-const App = () => (
-	<Provider store={store}>
-		<Router>
-			<Layout>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/login' element={<Login />} />
-					<Route path='/signup' element={<Signup />} />
-					<Route path='/reset-password' element={<ResetPassword />} />
-					<Route
-						path='/password/reset/confirm/:uid/:token'
-						element={<ResetPasswordConfirm />}
-					/>
-					<Route path='/activate/:uid/:token' element={<Activate />} />
-				</Routes>
-			</Layout>
-		</Router>
-	</Provider>
-)
+function App() {
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<AuthProvider>
+					<Header />
+					<Routes>
+						<Route path='/' element={<HomePage />} />
+						<Route path='/login' element={<LoginPage />} />
+					</Routes>
+				</AuthProvider>
+			</BrowserRouter>
+		</div>
+	)
+}
 
 export default App
