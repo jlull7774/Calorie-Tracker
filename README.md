@@ -5,7 +5,7 @@
 This is a calorie-tracker! It keeps track of how many calories you've had through the day and shows you the ratio of the main macros in your diet. 
 It can help people decide if they are eatly healthy based on their goals!
 
-Technologies Used
+## Technologies Used
 * Django
 * React
 * Python
@@ -15,9 +15,9 @@ Technologies Used
 * Javascript
 * CSS
 
-Icebox Items
+![wireframe](http://via.placeholder.com/200x150 "Title is optional")
+
+## Icebox Items
 - [x] Doughnut Chart
 - [ ] Food API
 - [ ] Machine Learning
-
-![wireframe](http://via.placeholder.com/200x150 "Title is optional")
