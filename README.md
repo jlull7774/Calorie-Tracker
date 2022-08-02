@@ -15,7 +15,7 @@ It can help people decide if they are eatly healthy based on their goals!
 * Javascript
 * CSS
 
-![wireframe](https://i.pinimg.com/originals/4b/6c/3a/4b6c3aec0edaad25518cad9bd4514bd3.jpg)
+![wireframe](https://i.pinimg.com/originals/50/cc/f0/50ccf029e40a729fb610dcdb8c86ebde.jpg)
 
 ## Icebox Items
 - [x] Doughnut Chart
